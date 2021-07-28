@@ -127,9 +127,9 @@ echo 'Setup /etc/sysctl.conf'
 cat << EOF >> /etc/sysctl.conf
 # Enhance shared memory X11 interface
 # grep memory /var/run/dmesg.boot
-kern.ipc.shmmax=35148267520
+kern.ipc.shmmax=5859934592
 # kern.ipc.shmmax / 4096
-kern.ipc.shmall=8581120
+kern.ipc.shmall=2097152
 # Enhance desktop responsiveness under high CPU use (200/224)
 kern.sched.preempt_thresh=224
 # Bump up maximum number of open files
@@ -171,15 +171,18 @@ kldload linux
 
 # Install packages for desktop use.
 pkg install -y 
-	xorg-mimimal\
+	xorg-minimal\
 	drm-kmod\
 	plasma5-plasma\
 	kde-baseapps\
 	kdeutils\
 	kdenetwork\
+	kmix\
+	sddm\
 	octopkg\
 	firefox\
 	libreoffice\
+	sudo\
 
 #
 ####################
