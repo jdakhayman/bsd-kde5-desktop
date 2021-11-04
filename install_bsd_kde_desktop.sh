@@ -178,6 +178,7 @@ pkg install -y
 	kdeutils\
 	kdenetwork\
 	kmix\
+	networkmgr\
 	sddm\
 	octopkg\
 	firefox\
