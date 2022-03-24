@@ -45,72 +45,71 @@ cp /dev/null /etc/rc.conf
 
 # Change this to match your machine setup.
 echo 'Write Johns machine specific custom rc.conf to file.'
-echo '\
-# File System Section.\
-zfs_enable="YES"\
-\
+echo '
+# File System Section.
+zfs_enable="YES"
+
 # load kernel modules.
-#kld_list="i915kms vmm nmdm if_bridge"\
-kld_list="i915kms"\
-\
-# Set system to route\
-#gateway_enabled="YES"\
-\
-# VM and jail Networking\
-#cloned_interfaces="bridge0 tap0 epair0a"\
-#ifconfig_bridge0=" addm tap0 addm epair0a up"\
-#ifconfig_bridge0_alias0="inet 10.0.4.1 netmask 255.255.255.0"\
-\
-# Networking Section-Interface startup and hostname.\
-hostname="fletcher-6.localdoamin"\
-background_dhclient="YES"\
-ifconfig_em0="DHCP"\
-#wlans_rtwn0="wlan0"\
-#ifconfig_wlan0="WPA DHCP"\
-#ifconfig_wlan0_ipv6="inet6 accept_rtadv"\
-#create_args_wlan0="country US regdomain FCC"\
-\
-# Throttle CPU when it is idle, or jack it up if its busy.\
-powerd_enable="YES"\
-powerd_flags="-a hiadaptive -b adaptive -n adaptive"\
-performance_cx_lowest="Cmax"\
-economy_cx_lowest="Cmax"\
+#kld_list="i915kms vmm nmdm if_bridge"
+kld_list="i915kms"
 
-# Time-Start ntp and sync the clock.\
-ntpdate_enable="YES"\
-ntpd_enable="YES"\
-ntpd_sync_on_start="YES"\
-\
-# Services needed by the desktop.\
-# messaging system.\
-dbus_enable="YES"\
-# Load up the mouse\
-mixer_enable="YES"\
-# Load up the mouse.\
-moused_enable="YES"\
-moused_flags="-VH"\
-# This is the display manager.\
-sddm_enable="YES"\
-# Load up the webcam\
-webcamd_enable="YES"\
-# Cups Printing\
-cupsd_enable="YES"\
+# Set system to route
+#gateway_enabled="YES"
 
-# Stuff to stop from starting\
-syslogd_flags="-ss"\
-sendmail_enable="NONE"\
-sendmail_submit_enable="NO"\
-sendmail_outbound_enable="NO"\
-sendmail_msp_queue_enable="NO"\
-\
-# Remember to do file checks, but in the back ground please.\
-fsck_y_enable="YES"\
-background_fsck="YES"\
-# Clear out the tmp folder on reboots.\
+# VM and jail Networking
+#cloned_interfaces="bridge0 tap0 epair0a"
+#ifconfig_bridge0=" addm tap0 addm epair0a up"
+#ifconfig_bridge0_alias0="inet 10.0.4.1 netmask 255.255.255.0"
+
+# Networking Section-Interface startup and hostname.
+hostname="fletcher-6.localdoamin"
+background_dhclient="YES"
+ifconfig_em0="DHCP"
+#wlans_rtwn0="wlan0"
+#ifconfig_wlan0="WPA DHCP"
+#ifconfig_wlan0_ipv6="inet6 accept_rtadv"
+#create_args_wlan0="country US regdomain FCC"
+
+# Throttle CPU when it is idle, or jack it up if its busy.
+powerd_enable="YES"
+powerd_flags="-a hiadaptive -b adaptive -n adaptive"
+performance_cx_lowest="Cmax"
+economy_cx_lowest="Cmax"
+
+# Time-Start ntp and sync the clock.
+ntpdate_enable="YES"
+ntpd_enable="YES"
+ntpd_sync_on_start="YES"
+
+# Services needed by the desktop.
+# messaging system.
+dbus_enable="YES"
+# Load up the mouse
+mixer_enable="YES"
+# Load up the mouse.
+mouse_type="auto"
+# This is the display manager.
+sddm_enable="YES"
+# Load up the webcam
+webcamd_enable="YES"
+# Cups Printing
+cupsd_enable="YES"
+
+# Stuff to stop from starting
+syslogd_flags="-ss"
+sendmail_enable="NONE"
+sendmail_submit_enable="NO"
+sendmail_outbound_enable="NO"
+sendmail_msp_queue_enable="NO"
+
+# Remember to do file checks, but in the back ground please.
+fsck_y_enable="YES"
+background_fsck="YES"
+# Clear out the tmp folder on reboots.
 clear_tmp_enable="YES"\
-Xorgclear_tmp_enable="YES"\
-\
-# Misc. startup\
+Xorgclear_tmp_enable="YES"
+
+# Misc. startup
 ' > /etc/rc.conf
 
 # Setup /boot/loader.conf
@@ -183,7 +182,7 @@ pkg install -y
 	octopkg\
 	firefox\
 	libreoffice\
-	sudo\
+	sudo
 
 #
 ####################
