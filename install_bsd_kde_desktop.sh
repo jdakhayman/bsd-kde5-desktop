@@ -106,7 +106,7 @@ sendmail_msp_queue_enable="NO"
 fsck_y_enable="YES"
 background_fsck="YES"
 # Clear out the tmp folder on reboots.
-clear_tmp_enable="YES"\
+clear_tmp_enable="YES"
 Xorgclear_tmp_enable="YES"
 
 # Misc. startup
